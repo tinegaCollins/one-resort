@@ -1,11 +1,6 @@
 import mongoose from "mongoose";
 
 const bookingSchema = new mongoose.Schema({
-  roomId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Room",
-    required: true,
-  },
   hotelId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Hotel",
@@ -40,4 +35,21 @@ const bookingSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  adults: {
+    type: Number,
+    required: true,
+  },
+  children: {
+    type: Number,
+    required: true,
+  },
+  rooms: {
+    type: Array,
+    required: true,
+  },
 });
+
+
+const Booking = mongoose.model("Booking", bookingSchema);
+
+export default Booking;

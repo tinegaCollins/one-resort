@@ -47,6 +47,8 @@ const startServer = () => {
   });
 
   app.use("/api/hotels", require("./routes/hotel"));
+  app.use("/api/rooms", require("./routes/room"));
+  
   let port = process.env.PORT || 8080;
   http
     .createServer(app)

@@ -31,13 +31,18 @@ const roomSchema = new mongoose.Schema({
     required: false,
     default: [],
   },
-  allRoooms: {
+  allRooms: {
     type: Number,
     required: true
   },
   availableRooms: {
     type: Number,
     required: true
+  },
+  images: {
+    type: Array,
+    required: false,
+    default: [],
   },
 });
 
